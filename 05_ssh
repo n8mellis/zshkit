@@ -1,0 +1,3 @@
+if [[ -x ~/.scripts/colorwrap ]]; then
+  alias ssh='~/.scripts/colorwrap ssh'
+fi

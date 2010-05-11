@@ -1,0 +1,2 @@
+alias bzip='bzip2'
+alias bunzip='bunzip2'

@@ -1,2 +1,12 @@
 setopt prompt_subst
-PROMPT='%{$reset_color%}%B%n%b@%m %~`git-prompt`%(!.#.>) '
+
+# Show the rightmost 3 path elements and username in the left-hand prompt:
+export PS1='%m:[%3.`git-prompt`]%# '
+
+# Show the time in the right-hand prompt:
+export RPS1='| %D{%a %L:%M %p}'
+
+# Add a Shakespearean insult ... because it's cool
+if [[ -e /usr/local/bin/insult.rb ]]; then
+  ruby /usr/local/bin/insult.rb
+fi

@@ -1,2 +1,5 @@
-alias fd=pushd
-alias sd=popd
+unsetopt  listambiguous   # Don't require an extra tab before completion list
+setopt    nolistbeep      # Don't beep when listing completions
+setopt    nobanghist      # Allow ! inside strings
+
+alias ..='cd ..'

@@ -1,2 +1,4 @@
-bindkey "${key[Home]}" beginning-of-line
-bindkey "${key[End]}" end-of-line
+bindkey "${key[Home]}"  beginning-of-line
+bindkey "${key[End]}"   end-of-line
+bindkey '\e[A'          history-beginning-search-backward   # Up arrow searches history
+bindkey '\e[B'          history-beginning-search-forward    # Down arrow reverses search

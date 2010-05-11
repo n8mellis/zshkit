@@ -6,3 +6,5 @@ if [[ -x `which mdfind` ]]; then
 	  mdfind "kMDItemFSName == '$*'wc"
 	}
 fi
+
+function ff() { find . -name $* 2>/dev/null }
