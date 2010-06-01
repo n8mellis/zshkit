@@ -5,3 +5,11 @@ compinit
 
 autoload -Uz colors
 colors
+
+if [[ $SHLVL < 3 ]]; then
+	mydir=`dirname $0`
+
+	for f in $mydir/rc.d/??_*; do
+		source $f
+	done
+fi

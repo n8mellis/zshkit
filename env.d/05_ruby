@@ -1,0 +1,2 @@
+# Automatically load RubyGems when using Ruby
+export RUBYOPT='rubygems'

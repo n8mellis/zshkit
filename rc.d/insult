@@ -1,0 +1,76 @@
+#!/usr/bin/env ruby
+
+#
+# == Shakespearean Insult Generator
+# 
+# Sometimes we all need a slap in the face to remind us that we're
+# worthless.  This Insult Generator is designed to do just that, but
+# instead of going the modern route and emitting a stream of
+# thoughtless obscenities, it reaches back in time (what a feat!) and
+# chooses some choice words from the language that Shakespeare used
+# to form its barb.
+#
+# The formula and its vocabulary originally appeared in printed form,
+# was adapted to a Visual Basic application, was re-implemented as a
+# command-line tool in C, and has now been adapted to Ruby for easy
+# cross-platform use.  Highly recommended for login scripts.
+#
+# - Marshall Elfstrand, March 2008
+#
+
+class InsultGenerator
+
+  INSULT_FORMAT = "Thou %s %s %s!"
+
+  SHORT_ADJECTIVES = [
+    "artless", "bawdy", "beslubbering", "bootless", "churlish",
+    "cockered", "clouted", "craven", "currish", "dankish",
+    "dissembling", "droning", "errant", "fawning", "fobbing",
+    "froward", "frothy", "gleeking", "goatish", "gorbellied",
+    "impertinent", "infectious", "jarring", "loggerheaded", "lumpish",
+    "mammering", "mangled", "mewling", "paunchy", "pribbling",
+    "puking", "puny", "qualling", "rank", "reeky",
+    "roguish", "ruttish", "saucy", "spleeny", "spongy",
+    "surly", "tottering", "unmuzzled", "vain", "venomed",
+    "villainous", "warped", "wayward", "weedy", "yeasty"
+  ]
+  
+  LONG_ADJECTIVES = [
+    "base-court", "bat-fowling", "beef-witted", "beetle-headed", 
+    "boil-brained", "clapper-clawed", "clay-brained", "common-kissing",
+    "crook-pated", "dismal-dreaming", "dizzy-eyed", "doghearted",
+    "dread-bolted", "earth-vexing", "elf-skinned", "fat-kidneyed",
+    "fen-sucked", "flap-mouthed", "fly-bitten", "folly-fallen", "fool-born",
+    "full-gorged", "guts-griping", "half-faced", "hasty-witted",
+    "hedge-born", "hell-hated", "idle-headed", "ill-breeding", "ill-nurtured",
+    "knotty-pated", "milk-livered", "motley-minded", "onion-eyed",
+    "plume-plucked", "pottle-deep", "pox-marked", "reeling-ripe",
+    "rough-hewn", "rude-growing", "rump-fed", "shard-borne", "sheep-biting",
+    "spur-galled", "swag-bellied", "tardy-gaited", "tickle-brained",
+    "toad-spotted", "unchin-snouted", "weather-bitten"
+  ]
+  
+  NOUNS = [
+    "apple-john", "baggage", "barnacle", "bladder", "boar-pig",
+  	"bugbear", "bum-bailey", "canker-blossom", "clack-dish", "clotpole",
+  	"coxcomb", "codpiece", "death-token", "dewberry", "flap-dragon",
+  	"flax-wench", "flirt-gill", "foot-licker", "fustilarian", "giglet",
+  	"gudgeon", "haggard", "harpy", "hedge-pig", "horn-beast",
+  	"hugger-mugger", "joithead", "lewdster", "lout", "maggot-pie",
+  	"malt-worm", "mammet", "measle", "minnow", "miscreant",
+  	"moldwarp", "mumble-news", "nut-hook", "pigeon-egg", "pignut",
+  	"puttock", "pumpion", "ratsbane", "scut", "skainsmate",
+  	"strumpet", "varlot", "vassal", "whey-face", "wagtail"
+  ]
+  
+  def insult_me!
+    puts INSULT_FORMAT % [
+      SHORT_ADJECTIVES[rand(SHORT_ADJECTIVES.size)],
+      LONG_ADJECTIVES[rand(LONG_ADJECTIVES.size)],
+      NOUNS[rand(NOUNS.size)]
+    ]
+  end #def
+  
+end #class
+
+InsultGenerator.new.insult_me! if __FILE__ == $0

@@ -1,0 +1,2 @@
+# Show the rightmost 3 path elements and username in the left-hand prompt:
+export PS1='%m:[%3.`git-prompt`]%# '

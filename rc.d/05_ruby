@@ -1,5 +1,2 @@
-# Automatically load RubyGems when using Ruby
-export RUBYOPT='rubygems'
-
 # Command to view any OS X property list as YAML
 alias ypl="ruby -rosx/foundation -ryaml -e 'y OSX.load_plist(File.read(ARGV[0]))'"
