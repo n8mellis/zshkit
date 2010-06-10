@@ -1,11 +1,3 @@
-zstyle ':completion:*' completer _expand _complete
-
-autoload -Uz compinit
-compinit
-
-autoload -Uz colors
-colors
-
 if [[ $SHLVL < 3 ]]; then
 	mydir=`dirname $0`
 
@@ -13,3 +5,11 @@ if [[ $SHLVL < 3 ]]; then
 		source $f
 	done
 fi
+
+zstyle ':completion:*' completer _expand _complete
+
+autoload -Uz compinit
+compinit
+
+autoload -Uz colors
+colors
